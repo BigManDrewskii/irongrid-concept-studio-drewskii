@@ -9,9 +9,9 @@ export function CompanyVideo() {
   const videoAnimation = useScrollAnimation(0.1)
 
   return (
-    <section className="section-dark section-md" id="company-video">
+    <section className="section-dark section-md hidden md:block" id="company-video">
       <Container>
-        <div className="content-width-normal">
+        <div className="content-width-wide">
           {/* Heading */}
           <div className="text-center heading-gap mb-8 md:mb-12">
             <h2
