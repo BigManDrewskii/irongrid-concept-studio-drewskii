@@ -5,9 +5,9 @@ import UnicornScene from 'unicornstudio-react/next'
 
 export function AboutHero() {
   return (
-    <section className="w-full bg-navy min-h-screen">
+    <section className="w-full bg-navy">
       {/* Dark Background Container with UnicornStudio */}
-      <div className="bg-navy noise-pattern relative w-full min-h-screen">
+      <div className="bg-navy noise-pattern relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh]">
         {/* UnicornStudio Background - Full Width */}
         <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
           <UnicornScene
@@ -24,8 +24,12 @@ export function AboutHero() {
         {/* Header Spacer */}
         <div className="h-[80px]" />
 
-        {/* Hero Content - Spacing for the section */}
-        <div className="py-16 md:py-32 lg:py-48" />
+        {/* Hero Content - Centered spacing */}
+        <div className="flex items-center justify-center h-[calc(100%-80px)]">
+          <div className="w-full max-w-4xl px-6 text-center">
+            {/* Content can be added here if needed */}
+          </div>
+        </div>
       </div>
     </section>
   )
