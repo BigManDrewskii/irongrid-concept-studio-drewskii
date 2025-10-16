@@ -45,7 +45,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 top-0 z-[121] flex h-[80px] items-center justify-center text-white bg-navy/95 xl:bg-transparent backdrop-blur-md xl:backdrop-blur-0 border-b border-white/10 xl:border-0 transition-opacity duration-700 ease-out ${
+        className={`fixed left-0 right-0 top-0 z-[121] flex h-[80px] items-center justify-center text-white transition-opacity duration-700 ease-out ${
           mounted ? 'opacity-100' : 'opacity-0'
         }`}
       >
@@ -87,7 +87,7 @@ export function Header() {
 
             {/* Mobile: Logo + Menu Pill */}
             <div className="xl:hidden">
-              <Link href="/" aria-label="home" className="flex items-center px-4 py-2 rounded-none bg-navy/60 border border-white/20">
+              <Link href="/" aria-label="home" className="flex items-center px-5 py-2.5 rounded-none bg-navy/85 border border-white/15 backdrop-blur-md shadow-lg">
                 <span className="font-brand text-[24px] text-white tracking-tight">IRONGRID</span>
               </Link>
             </div>
@@ -109,7 +109,7 @@ export function Header() {
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="flex items-center justify-center rounded-none border border-white/30 bg-navy/90 shadow-lg w-12 h-12 hover:border-electricBlue hover:bg-electricBlue/20 hover:shadow-xl transition-all duration-200"
+                className="flex items-center justify-center rounded-none border border-white/15 bg-navy/85 backdrop-blur-md shadow-lg w-12 h-12 hover:border-electricBlue/50 hover:bg-electricBlue/15 hover:shadow-xl transition-all duration-200"
               >
                 {mobileMenuOpen ? (
                   <X className="w-6 h-6" aria-hidden="true" />
