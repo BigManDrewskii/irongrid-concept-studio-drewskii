@@ -56,14 +56,14 @@ export function Mission() {
         <div className="content-width-wide">
           {/* Mission Statement */}
           <div className="text-center mb-12 md:mb-16 lg:mb-20">
-            <h2
+            <h1
               ref={headingAnimation.ref}
               className={`text-56 font-heading font-semibold text-white mb-6 md:mb-8 transition-all duration-700 ${
                 headingAnimation.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
             >
               Our Mission
-            </h2>
+            </h1>
             <p
               ref={statementAnimation.ref}
               className={`text-20 md:text-28 text-white/90 leading-relaxed max-w-4xl mx-auto transition-all duration-700 delay-150 ${

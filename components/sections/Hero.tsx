@@ -4,68 +4,29 @@ import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/layout/Container'
 import { BackedByPill } from '@/components/ui/BackedByPill'
 import { useScrollAnimation } from '@/hooks/useScrollAnimation'
-import { useEffect, useState } from 'react'
 
 export function Hero() {
-  const [embedKey, setEmbedKey] = useState(0)
   const headingAnimation = useScrollAnimation(0.1)
   const descriptionAnimation = useScrollAnimation(0.1)
   const ctaAnimation = useScrollAnimation(0.1)
   const backedByAnimation = useScrollAnimation(0.1)
 
-  useEffect(() => {
-    // Reset embed on mount
-    setEmbedKey(prev => prev + 1)
-
-    // Clean up and reinitialize UnicornStudio
-    const initUnicornStudio = () => {
-      // Remove existing script if present
-      const existingScript = document.querySelector('script[src*="unicornstudio"]')
-      if (existingScript) {
-        existingScript.remove()
-      }
-
-      // Reset window object
-      if (window.UnicornStudio) {
-        window.UnicornStudio.isInitialized = false
-      }
-
-      // Load script fresh
-      const script = document.createElement('script')
-      script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.33/dist/unicornStudio.umd.js'
-      script.onload = () => {
-        if (window.UnicornStudio && window.UnicornStudio.init) {
-          window.UnicornStudio.init()
-          window.UnicornStudio.isInitialized = true
-        }
-      }
-      ;(document.head || document.body).appendChild(script)
-    }
-
-    // Initialize immediately without timeout
-    initUnicornStudio()
-
-    return () => {
-      // Cleanup if needed
-    }
-  }, [])
-
   return (
     <section className="flex justify-center w-full bg-navy">
       <div className="pt-0 pb-0 !w-full">
-        {/* Dark Background Container with UnicornStudio Background */}
+        {/* Dark Background Container with Video Background */}
         <div className="bg-navy noise-pattern relative overflow-hidden">
-          {/* UnicornStudio Background */}
-          <div key={embedKey} className="absolute inset-0 w-full h-full">
-            <div
-              data-us-project="3HSVEVnPS2lfbhy4DF4m"
-              className="absolute inset-0 w-full h-full"
-              style={{
-                width: '100%',
-                height: '100%',
-                minHeight: '100%'
-              }}
-            />
+          {/* Video Background */}
+          <div className="absolute inset-0 w-full h-full">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-60"
+            >
+              <source src="/irongrid-hero-bg.webm" type="video/webm" />
+            </video>
           </div>
 
           {/* Header Spacer */}

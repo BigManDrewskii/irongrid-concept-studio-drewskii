@@ -59,8 +59,8 @@ export function AboutHero() {
         {/* Header Spacer */}
         <div className="h-[80px]" />
 
-        {/* Hero Content - Maintains spacing */}
-        <div className="section-lg" />
+        {/* Hero Content - Reduced padding on mobile when embed is hidden */}
+        <div className="py-8 md:py-20 lg:py-32" />
       </div>
     </section>
   )
