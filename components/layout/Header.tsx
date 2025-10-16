@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 export function Header() {
@@ -108,18 +107,8 @@ export function Header() {
             {/* Right: Contact Pill (Desktop) */}
             <Link
               href="/contact"
-              className="hidden xl:flex rounded-none border border-white/20 bg-navy/80 backdrop-blur-md shadow-lg hover:border-electricBlue hover:bg-electricBlue/20 hover:text-white hover:shadow-xl transition-all duration-200 px-6 py-3 text-[16px] font-medium relative overflow-hidden group"
+              className="hidden xl:flex rounded-none border border-white/20 bg-navy/80 backdrop-blur-md shadow-lg hover:border-electricBlue hover:bg-electricBlue/20 hover:text-white hover:shadow-xl transition-all duration-200 px-6 py-3 text-[16px] font-medium relative overflow-hidden"
             >
-              {/* Grid Pattern Background */}
-              <div className="absolute inset-0 opacity-15 pointer-events-none">
-                <Image
-                  src="/grid-pattern.png"
-                  alt=""
-                  fill
-                  className="object-cover"
-                  style={{ mixBlendMode: 'screen' }}
-                />
-              </div>
               <span className="relative z-10">Contact</span>
             </Link>
 
@@ -132,22 +121,12 @@ export function Header() {
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="flex items-center justify-center rounded-none border border-white/10 bg-navy backdrop-blur-md shadow-lg w-12 h-12 hover:border-electricBlue hover:bg-electricBlue/15 hover:shadow-xl transition-all duration-200 relative overflow-hidden group"
+                className="flex items-center justify-center rounded-none border border-white/10 bg-navy backdrop-blur-md shadow-lg w-12 h-12 hover:border-electricBlue hover:bg-electricBlue/15 hover:shadow-xl transition-all duration-200"
               >
-                {/* Grid Pattern Spotlight on Hover */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none">
-                  <Image
-                    src="/grid-pattern.png"
-                    alt=""
-                    fill
-                    className="object-cover"
-                    style={{ mixBlendMode: 'screen' }}
-                  />
-                </div>
                 {mobileMenuOpen ? (
-                  <X className="w-6 h-6 relative z-10" aria-hidden="true" />
+                  <X className="w-6 h-6" aria-hidden="true" />
                 ) : (
-                  <Menu className="w-6 h-6 relative z-10" aria-hidden="true" />
+                  <Menu className="w-6 h-6" aria-hidden="true" />
                 )}
               </button>
             </div>
