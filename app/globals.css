@@ -1,26 +1,424 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Ancizar+Serif:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-body: var(--font-manrope), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: 'Ancizar Serif', Georgia, 'Times New Roman', serif;
+  --font-brand: var(--font-goldman), Impact, 'Arial Black', sans-serif;
+  --font-label: 'Ancizar Serif', Georgia, 'Times New Roman', serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Respect motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply text-charcoal bg-white;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    /* Add scroll margin for anchor links */
+    scroll-margin-top: 90px;
+    /* Prevent widows/orphans - SHOULD for better typography */
+    text-wrap: balance;
+  }
+
+  /* Enhanced typography hierarchy */
+  h1 {
+    @apply font-semibold;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply font-semibold;
+    letter-spacing: -0.015em;
+  }
+
+  h3, h4 {
+    @apply font-semibold;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    @apply bg-electricBlue text-white;
+  }
+
+  /* Global focus-visible styles - MUST for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-electricBlue ring-offset-2 ring-offset-white;
+  }
+
+  /* Dark background focus rings */
+  .bg-navy *:focus-visible,
+  .section-dark *:focus-visible {
+    @apply ring-offset-navy;
+  }
+
+  /* Skip to content link - MUST for accessibility */
+  .skip-to-content {
+    @apply fixed top-0 left-0 z-[9999] bg-electricBlue text-white px-6 py-3 font-medium rounded-sm;
+    transform: translateY(-100%);
+    transition: transform 0.2s ease;
+  }
+
+  .skip-to-content:focus {
+    transform: translateY(0);
+  }
+
+  /* Touch action to prevent double-tap zoom - MUST for mobile */
+  button,
+  a,
+  [role="button"] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(14, 165, 233, 0.3);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Container */
+  .container {
+    @apply mx-auto w-full max-w-container px-6 md:px-0;
+  }
+
+  .container-borders {
+    @apply border-0 border-borderGrey md:border-x;
+  }
+
+  /* Section Spacing Standards */
+  .section-sm {
+    @apply py-8 md:py-12 lg:py-16;
+  }
+
+  .section-md {
+    @apply py-12 md:py-16 lg:py-24;
+  }
+
+  .section-lg {
+    @apply py-16 md:py-20 lg:py-32;
+  }
+
+  /* Section Variants */
+  .section-dark {
+    @apply bg-navy text-white;
+  }
+
+  .section-light {
+    @apply bg-white text-charcoal;
+  }
+
+  /* Content Spacing Utilities */
+  .content-gap {
+    @apply mb-8 md:mb-12 lg:mb-16;
+  }
+
+  .heading-gap {
+    @apply mb-2 md:mb-3;
+  }
+
+  .text-gap {
+    @apply mb-3 md:mb-4;
+  }
+
+  /* Content Width System */
+  .content-width-narrow {
+    @apply max-w-3xl mx-auto;
+  }
+
+  .content-width-normal {
+    @apply max-w-4xl mx-auto;
+  }
+
+  .content-width-wide {
+    @apply max-w-5xl mx-auto;
+  }
+
+  .content-width-full {
+    @apply w-full;
+  }
+
+  /* Card System - with layered shadows and crisp borders */
+  .card-base {
+    @apply rounded-sm border shadow-sm transition-all duration-200;
+  }
+
+  .card-sm {
+    @apply p-4 md:p-5 lg:p-6;
+  }
+
+  .card-md {
+    @apply p-5 md:p-6 lg:p-8;
+  }
+
+  .card-lg {
+    @apply p-6 md:p-8 lg:p-12;
+  }
+
+  /* Card hover states */
+  .card-base:hover {
+    @apply shadow-md;
+  }
+
+  /* Dark Glass Card System - for navy backgrounds */
+  .card-glass {
+    @apply rounded-sm border border-white/10 backdrop-blur-sm transition-all duration-200 shadow-lg;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  .card-glass:hover {
+    @apply border-white/20;
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .card-glass-subtle {
+    @apply rounded-sm border border-white/5 backdrop-blur-sm transition-all duration-200;
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+
+  .card-glass-subtle:hover {
+    @apply border-white/10 shadow-md;
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  /* Icon Container System */
+  .icon-container-sm {
+    @apply w-8 h-8 rounded-sm flex items-center justify-center;
+  }
+
+  .icon-container-md {
+    @apply w-10 h-10 rounded-sm flex items-center justify-center;
+  }
+
+  .icon-container-lg {
+    @apply w-12 h-12 rounded-sm flex items-center justify-center;
+  }
+
+  /* Grid Gap System */
+  .grid-gap-sm {
+    @apply gap-4 md:gap-6 lg:gap-8;
+  }
+
+  .grid-gap-md {
+    @apply gap-5 md:gap-8 lg:gap-12;
+  }
+
+  .grid-gap-lg {
+    @apply gap-6 md:gap-12 lg:gap-16;
+  }
+
+  /* Button Base - with improved shadows and transitions */
+  .btn {
+    @apply font-medium whitespace-nowrap relative overflow-hidden text-center border items-center justify-center transition-all duration-200 ease-in-out select-none appearance-none inline-flex gap-2 leading-none rounded-sm;
+    will-change: transform, box-shadow;
+  }
+
+  /* Button Sizes */
+  .btn-xs {
+    @apply h-8 px-3 text-14;
+  }
+
+  .btn-sm {
+    @apply h-10 px-4 text-14;
+  }
+
+  .btn-md {
+    @apply h-12 px-6 text-16;
+  }
+
+  .btn-lg {
+    @apply h-14 px-7 text-18;
+  }
+
+  /* Button Variants - with enhanced contrast and shadows */
+  .btn-primary {
+    @apply bg-white border-white text-charcoal shadow-sm hover:bg-electricBlue hover:border-electricBlue hover:text-white hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border-white/20 text-white hover:border-white hover:bg-white hover:text-charcoal hover:shadow-md;
+  }
+
+  .btn-tertiary {
+    @apply bg-transparent border-transparent text-white hover:bg-white/10;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent border-transparent text-charcoal hover:bg-grey-light hover:text-charcoal/90;
+  }
+
+  .btn-link {
+    @apply bg-transparent border-transparent text-electricBlue hover:underline hover:text-electricBlue/80 h-auto px-0;
+  }
+
+  /* Button States - enhanced for accessibility and delight */
+  .btn:focus-visible {
+    @apply outline-none ring-2 ring-electricBlue ring-offset-2;
+  }
+
+  .btn:disabled {
+    @apply opacity-50 cursor-not-allowed pointer-events-none;
+  }
+
+  .btn:active:not(:disabled) {
+    @apply scale-[0.98];
+    transform: translateY(1px);
+  }
+
+  /* Increased contrast on active state - MUST for accessibility */
+  .btn-primary:active:not(:disabled) {
+    @apply brightness-95;
+  }
+
+  .btn-secondary:active:not(:disabled) {
+    @apply brightness-90;
+  }
+
+  /* Font Utilities */
+  .font-brand {
+    font-family: var(--font-brand);
+  }
+
+  .font-label {
+    font-family: var(--font-label);
+  }
+
+  /* Typography Utilities */
+  .text-tight {
+    line-height: 1.2;
+  }
+
+  .text-compact {
+    line-height: 1.3;
+  }
+
+  .text-comfortable {
+    line-height: 1.4;
+  }
+
+  /* Text balance for headings - prevents widows */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Tabular numbers for data - MUST for tables/comparisons */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Noise Texture Background */
+  .noise-pattern {
+    position: relative;
+  }
+
+  .noise-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  /* Hide Scrollbars */
+  .hide-scrollbars {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbars::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  /* Responsive Typography Utilities - Mobile optimized */
+  @media (min-width: 640px) {
+    .text-88 { font-size: clamp(2.25rem, calc(-6.25rem + 18.359375vw), 5.5rem); }
+    .text-76 { font-size: clamp(2rem, calc(-9.5rem + 29.6875vw), 4.75rem); }
+    .text-64 { font-size: clamp(1.75rem, calc(-8rem + 25vw), 4rem); }
+    .text-56 { font-size: clamp(1.625rem, calc(-6.25rem + 20.3125vw), 3.5rem); }
+    .text-52 { font-size: clamp(1.875rem, calc(-2.75rem + 12.5vw), 3.25rem); }
+    .text-40 { font-size: clamp(1.75rem, calc(-0.125rem + 5.46875vw), 2.5rem); }
+    .text-36 { font-size: clamp(1.5rem, calc(-1.35rem + 7.5vw), 2.25rem); }
+    .text-28 { font-size: clamp(1.25rem, calc(-0.0875rem + 3.828125vw), 1.75rem); }
+    .text-24 { font-size: clamp(1.125rem, calc(-0.075rem + 3.28125vw), 1.5rem); }
+  }
+
+  /* Border Opacity Utilities */
+  .border-white\/10 {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .border-white\/20 {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .border-grey\/20 {
+    border-color: rgba(229, 229, 229, 0.2);
+  }
+
+  .border-grey\/30 {
+    border-color: rgba(229, 229, 229, 0.3);
+  }
+
+  /* Content Visibility */
+  .content-visibility-auto {
+    content-visibility: auto;
+  }
+
+  /* Animation Delays */
+  .transition-instant-hover {
+    transition-duration: 0ms;
+  }
+
+  .transition-instant-hover:hover {
+    transition-duration: 200ms;
+  }
+
+  /* Footer Logo Glow - Strong Concentrated Inner Glow */
+  @keyframes footer-glow {
+    0% {
+      filter: drop-shadow(0 0 0 rgba(14, 165, 233, 0));
+    }
+    50% {
+      filter: drop-shadow(0 0 1px rgba(14, 165, 233, 0.9));
+    }
+    100% {
+      filter: drop-shadow(0 0 0 rgba(14, 165, 233, 0));
+    }
+  }
+
+  .footer-logo-glow {
+    animation: footer-glow 2s ease-in-out;
+  }
+
+  /* Footer Logo Hover - Strong Concentrated Glow */
+  .footer-logo-container {
+    transition: filter 300ms ease-out;
+  }
+
+  .footer-logo-container:hover {
+    filter: drop-shadow(0 0 1px rgba(14, 165, 233, 0.85));
+  }
 }

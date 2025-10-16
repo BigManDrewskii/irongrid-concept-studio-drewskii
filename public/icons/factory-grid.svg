@@ -1,0 +1,25 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid-factory" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Factory building -->
+  <path d="M 12 32 L 12 44 L 44 44 L 44 24 L 36 24 L 36 20 L 28 20 L 28 16 L 20 16 L 20 32 Z" fill="url(#grid-factory)" stroke="currentColor" stroke-width="2"/>
+
+  <!-- Smokestacks -->
+  <rect x="16" y="10" width="3" height="6" fill="currentColor"/>
+  <rect x="24" y="8" width="3" height="8" fill="currentColor"/>
+  <rect x="32" y="6" width="3" height="10" fill="currentColor"/>
+
+  <!-- Windows -->
+  <rect x="16" y="36" width="4" height="4" fill="currentColor" opacity="0.4"/>
+  <rect x="26" y="36" width="4" height="4" fill="currentColor" opacity="0.4"/>
+  <rect x="36" y="36" width="4" height="4" fill="currentColor" opacity="0.4"/>
+
+  <!-- Gear overlay -->
+  <circle cx="38" cy="30" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <path d="M 38 26 L 38 28 M 38 32 L 38 34 M 34 30 L 36 30 M 40 30 L 42 30" stroke="currentColor" stroke-width="1.5"/>
+</svg>

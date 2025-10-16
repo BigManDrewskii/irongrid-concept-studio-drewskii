@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Charging station -->
+  <rect x="10" y="8" width="12" height="16" rx="1.5" stroke="currentColor" stroke-width="2"/>
+  <!-- Plug/cable -->
+  <path d="M 22 16 L 25 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <!-- Lightning bolt -->
+  <path d="M 16 12 L 14 17 L 16 17 L 15 20 L 18 15 L 16 15 L 17 12 Z" fill="currentColor"/>
+  <!-- Base -->
+  <line x1="9" y1="24" x2="23" y2="24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+</svg>

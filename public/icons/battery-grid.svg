@@ -1,0 +1,18 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid-battery" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Battery shape -->
+  <rect x="14" y="18" width="28" height="20" rx="2" fill="url(#grid-battery)" stroke="currentColor" stroke-width="2"/>
+  <rect x="42" y="24" width="4" height="8" rx="1" fill="currentColor"/>
+
+  <!-- Power indicator bars -->
+  <rect x="18" y="22" width="4" height="12" fill="currentColor" opacity="0.4"/>
+  <rect x="24" y="22" width="4" height="12" fill="currentColor" opacity="0.6"/>
+  <rect x="30" y="22" width="4" height="12" fill="currentColor" opacity="0.8"/>
+  <rect x="36" y="22" width="4" height="12" fill="currentColor"/>
+</svg>

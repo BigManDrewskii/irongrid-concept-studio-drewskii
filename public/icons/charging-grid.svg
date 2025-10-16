@@ -1,0 +1,24 @@
+<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid-charging" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M 8 0 L 0 0 0 8" fill="none" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Charging station -->
+  <rect x="18" y="14" width="20" height="28" rx="2" fill="url(#grid-charging)" stroke="currentColor" stroke-width="2"/>
+
+  <!-- Screen/Display -->
+  <rect x="22" y="18" width="12" height="8" rx="1" fill="currentColor" opacity="0.2"/>
+
+  <!-- Plug/connector -->
+  <path d="M 38 32 L 42 32 L 44 34 L 44 38 L 42 40 L 38 40" stroke="currentColor" stroke-width="2" fill="none"/>
+  <line x1="44" y1="36" x2="48" y2="36" stroke="currentColor" stroke-width="2"/>
+
+  <!-- Power/Lightning bolt -->
+  <path d="M 28 28 L 26 34 L 28 34 L 27 38 L 31 32 L 29 32 L 30 28 Z" fill="currentColor"/>
+
+  <!-- Base -->
+  <rect x="16" y="42" width="24" height="2" fill="currentColor"/>
+</svg>

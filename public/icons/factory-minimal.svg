@@ -1,0 +1,11 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Factory building outline -->
+  <path d="M 6 18 L 6 26 L 26 26 L 26 14 L 22 14 L 22 11 L 18 11 L 18 8 L 14 8 L 14 18" stroke="currentColor" stroke-width="2" fill="none"/>
+  <!-- Smokestacks -->
+  <line x1="10" y1="6" x2="10" y2="8" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="16" y1="4" x2="16" y2="8" stroke="currentColor" stroke-width="1.5"/>
+  <line x1="22" y1="5" x2="22" y2="11" stroke="currentColor" stroke-width="1.5"/>
+  <!-- Windows -->
+  <rect x="10" y="20" width="3" height="3" stroke="currentColor" stroke-width="1"/>
+  <rect x="19" y="20" width="3" height="3" stroke="currentColor" stroke-width="1"/>
+</svg>
