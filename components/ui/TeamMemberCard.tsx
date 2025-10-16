@@ -35,7 +35,7 @@ export function TeamMemberCard({ photo, name, title, bio }: TeamMemberCardProps)
             <h3 className="text-24 md:text-28 font-heading font-semibold text-white mb-2 tracking-tight line-clamp-1">
               {name}
             </h3>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-electricBlue/10 border border-electricBlue/20">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-none bg-electricBlue/10 border border-electricBlue/20">
               <div className="w-1.5 h-1.5 rounded-full bg-electricBlue" />
               <p className="text-14 md:text-16 text-electricBlue font-medium whitespace-nowrap">
                 {title}
@@ -44,7 +44,7 @@ export function TeamMemberCard({ photo, name, title, bio }: TeamMemberCardProps)
           </div>
 
           {/* Bio */}
-          <p className="text-15 md:text-16 text-white/75 leading-relaxed line-clamp-6 flex-1">
+          <p className="text-15 md:text-16 text-white/75 leading-relaxed flex-1">
             {bio}
           </p>
         </div>

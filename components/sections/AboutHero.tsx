@@ -35,10 +35,11 @@ export function AboutHero() {
       ;(document.head || document.body).appendChild(script)
     }
 
-    const timer = setTimeout(initUnicornStudio, 100)
+    // Initialize immediately without timeout
+    initUnicornStudio()
 
     return () => {
-      clearTimeout(timer)
+      // Cleanup if needed
     }
   }, [])
 
@@ -46,8 +47,8 @@ export function AboutHero() {
     <section className="w-full bg-navy">
       {/* Dark Background Container with UnicornStudio */}
       <div className="bg-navy noise-pattern relative w-full">
-        {/* UnicornStudio Background - Full Width */}
-        <div key={embedKey} className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+        {/* UnicornStudio Background - Full Width - Hidden on Mobile */}
+        <div key={embedKey} className="hidden md:block absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
           <div
             data-us-project="C5nR2Fk5eMNHZzdRma3P"
             style={{ width: '100%', height: '100%', minWidth: '100vw' }}

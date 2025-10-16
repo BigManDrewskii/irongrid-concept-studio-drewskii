@@ -42,10 +42,11 @@ export function Hero() {
       ;(document.head || document.body).appendChild(script)
     }
 
-    const timer = setTimeout(initUnicornStudio, 100)
+    // Initialize immediately without timeout
+    initUnicornStudio()
 
     return () => {
-      clearTimeout(timer)
+      // Cleanup if needed
     }
   }, [])
 
