@@ -47,8 +47,8 @@ export function AboutHero() {
     <section className="w-full bg-navy">
       {/* Dark Background Container with UnicornStudio */}
       <div className="bg-navy noise-pattern relative w-full">
-        {/* UnicornStudio Background - Full Width - Hidden on Mobile */}
-        <div key={embedKey} className="hidden md:block absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+        {/* UnicornStudio Background - Full Width */}
+        <div key={embedKey} className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
           <div
             data-us-project="C5nR2Fk5eMNHZzdRma3P"
             style={{ width: '1728px', height: '1117px' }}
