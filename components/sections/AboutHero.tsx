@@ -14,7 +14,6 @@ export function AboutHero() {
             projectId="C5nR2Fk5eMNHZzdRma3P"
             width="100%"
             height="100%"
-            scale={0.7}
             fps={30}
             lazyLoad={true}
             production={true}
