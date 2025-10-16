@@ -53,19 +53,7 @@ export function Header() {
         <div className="container !w-full relative z-10">
           <div className="mx-auto flex !w-full items-center justify-between">
             {/* Left: Logo + Nav Pill */}
-            <div
-              className="rounded-none border border-white/10 bg-navy backdrop-blur-md shadow-lg hover:border-electricBlue/50 hover:shadow-xl transition-all duration-200 hidden xl:flex relative overflow-hidden group"
-            >
-              {/* Grid Pattern on Hover */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-25 transition-opacity duration-300 pointer-events-none">
-                <Image
-                  src="/grid-pattern.png"
-                  alt=""
-                  fill
-                  className="object-cover"
-                  style={{ mixBlendMode: 'screen' }}
-                />
-              </div>
+            <div className="rounded-none border border-white/10 bg-navy backdrop-blur-md shadow-lg hover:border-electricBlue/50 hover:shadow-xl transition-all duration-200 hidden xl:flex relative overflow-hidden">
               <div className="flex items-center gap-2 px-6 py-3 relative z-10">
                 <Link href="/" aria-label="home" className="flex items-center pr-4">
                   <span className="font-brand text-[28px] text-white tracking-tight">IRONGRID</span>
