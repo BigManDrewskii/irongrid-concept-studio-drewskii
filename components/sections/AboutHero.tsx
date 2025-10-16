@@ -1,48 +1,24 @@
 'use client'
 
 import { Container } from '@/components/layout/Container'
-import { useEffect, useState } from 'react'
+import UnicornScene from 'unicornstudio-react/next'
 
 export function AboutHero() {
-  const [embedKey, setEmbedKey] = useState(0)
-
-  useEffect(() => {
-    // Reset embed on mount
-    setEmbedKey(prev => prev + 1)
-
-    // Initialize UnicornStudio with inline script approach
-    const initUnicornStudio = () => {
-      if (!window.UnicornStudio) {
-        window.UnicornStudio = { isInitialized: false }
-        const script = document.createElement('script')
-        script.src = 'https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.33/dist/unicornStudio.umd.js'
-        script.onload = () => {
-          if (window.UnicornStudio && !window.UnicornStudio.isInitialized) {
-            window.UnicornStudio.init()
-            window.UnicornStudio.isInitialized = true
-          }
-        }
-        ;(document.head || document.body).appendChild(script)
-      }
-    }
-
-    initUnicornStudio()
-
-    return () => {
-      // Cleanup if needed
-    }
-  }, [])
-
   return (
     <section className="w-full bg-navy">
       {/* Dark Background Container with UnicornStudio */}
       <div className="bg-navy noise-pattern relative w-full">
         {/* UnicornStudio Background - Full Width */}
-        <div key={embedKey} className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden flex items-center justify-center">
-          <div
-            data-us-project="C5nR2Fk5eMNHZzdRma3P"
-            style={{ width: '1728px', height: '1117px', minWidth: '100%', minHeight: '100%' }}
-            className="w-full h-full"
+        <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden flex items-center justify-center">
+          <UnicornScene
+            projectId="C5nR2Fk5eMNHZzdRma3P"
+            width="100%"
+            height="100%"
+            scale={0.7}
+            fps={30}
+            lazyLoad={true}
+            production={true}
+            className="w-full h-full min-w-full min-h-full"
           />
         </div>
 
