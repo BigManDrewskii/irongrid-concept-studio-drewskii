@@ -54,7 +54,7 @@ export function AboutHero() {
   return (
     <section className="w-full bg-navy">
       {/* Dark Background Container with UnicornStudio */}
-      <div className="bg-navy noise-pattern relative w-full min-h-screen py-20 md:py-32">
+      <div className="bg-navy noise-pattern relative w-full py-20 md:py-24 lg:py-28">
         {/* UnicornStudio Background - Full Width */}
         <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
           <UnicornScene
@@ -67,6 +67,9 @@ export function AboutHero() {
             className="w-full h-full"
           />
         </div>
+
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-navy/40 pointer-events-none" />
 
         {/* Header Spacer */}
         <div className="h-[80px]" />
