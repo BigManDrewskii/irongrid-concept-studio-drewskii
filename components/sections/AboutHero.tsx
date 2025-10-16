@@ -43,31 +43,23 @@ export function AboutHero() {
   }, [])
 
   return (
-    <section className="flex justify-center w-full bg-navy">
-      <div className="pt-0 pb-0 !w-full">
-        {/* Dark Background Container with UnicornStudio */}
-        <div className="bg-navy noise-pattern relative">
-          {/* UnicornStudio Background - Full Width */}
-          <div key={embedKey} className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden w-full">
-            <div
-              data-us-project="C5nR2Fk5eMNHZzdRma3P"
-              style={{ width: '1920px', height: '840px' }}
-              className="opacity-100"
-            />
-          </div>
-
-          {/* Header Spacer */}
-          <Container>
-            <div className="h-[80px]" />
-          </Container>
-
-          {/* Hero Content - Empty but maintains original spacing */}
-          <Container>
-            <div className="px-6 section-lg text-center content-width-normal relative z-10">
-              {/* Content removed - just maintaining the section-lg spacing */}
-            </div>
-          </Container>
+    <section className="w-full bg-navy">
+      {/* Dark Background Container with UnicornStudio */}
+      <div className="bg-navy noise-pattern relative w-full">
+        {/* UnicornStudio Background - Full Width */}
+        <div key={embedKey} className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
+          <div
+            data-us-project="C5nR2Fk5eMNHZzdRma3P"
+            style={{ width: '100%', height: '100%', minWidth: '100vw' }}
+            className="w-full h-full"
+          />
         </div>
+
+        {/* Header Spacer */}
+        <div className="h-[80px]" />
+
+        {/* Hero Content - Maintains spacing */}
+        <div className="section-lg" />
       </div>
     </section>
   )
