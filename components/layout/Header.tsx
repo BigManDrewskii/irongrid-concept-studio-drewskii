@@ -45,7 +45,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 top-0 z-[121] flex h-[80px] items-center justify-center text-white pt-4 transition-opacity duration-700 ease-out ${
+        className={`fixed left-0 right-0 top-0 z-[121] flex h-[80px] items-center justify-center text-white pt-6 transition-opacity duration-700 ease-out ${
           mounted ? 'opacity-100' : 'opacity-0'
         }`}
       >
