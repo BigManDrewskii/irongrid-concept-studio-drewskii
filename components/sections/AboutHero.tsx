@@ -60,7 +60,7 @@ export function AboutHero() {
         <div className="h-[80px]" />
 
         {/* Hero Content - Reduced padding on mobile when embed is hidden */}
-        <div className="py-8 md:py-20 lg:py-32" />
+        <div className="py-16 md:py-32 lg:py-48" />
       </div>
     </section>
   )
