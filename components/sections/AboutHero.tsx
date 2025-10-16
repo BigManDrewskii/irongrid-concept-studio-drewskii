@@ -51,7 +51,7 @@ export function AboutHero() {
         <div key={embedKey} className="hidden md:block absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
           <div
             data-us-project="C5nR2Fk5eMNHZzdRma3P"
-            style={{ width: '100%', height: '100%', minWidth: '100vw' }}
+            style={{ width: '1728px', height: '1117px' }}
             className="w-full h-full"
           />
         </div>
