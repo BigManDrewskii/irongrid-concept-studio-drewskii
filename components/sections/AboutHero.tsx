@@ -58,10 +58,10 @@ export function AboutHero() {
         {/* UnicornStudio Background - Full Width */}
         <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
           <UnicornScene
-            projectId="SW9bXdVZXWKe61pYtsZf"
+            jsonFilePath="/unicorn-scene.json"
             width="100%"
             height="100%"
-            fps={30}
+            fps={60}
             lazyLoad={true}
             production={true}
             className="w-full h-full"
