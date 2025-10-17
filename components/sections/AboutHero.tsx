@@ -16,8 +16,8 @@ function PrincipleCard({ icon: Icon, title, description, index }: { icon: any; t
       }`}
       style={{ transitionDelay: `${index * 100 + 300}ms` }}
     >
-      <div className="inline-flex items-center justify-center w-12 h-12 rounded-sm bg-electricBlue/10 border border-electricBlue/20 mb-4 md:mb-5">
-        <Icon className="w-6 h-6 text-electricBlue" strokeWidth={2} />
+      <div className="inline-flex items-center justify-center w-12 h-12 rounded-sm bg-electricBlue mb-4 md:mb-5">
+        <Icon className="w-6 h-6 text-navy" strokeWidth={2} />
       </div>
       <h3 className="text-24 md:text-28 font-heading font-semibold text-white mb-3 md:mb-4">
         {title}
