@@ -69,7 +69,7 @@ export function AboutHero() {
         </div>
 
         {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-navy/40 pointer-events-none" />
+        <div className="absolute inset-0 w-full h-full bg-navy/40 pointer-events-none" />
 
         {/* Header Spacer */}
         <div className="h-[80px]" />
