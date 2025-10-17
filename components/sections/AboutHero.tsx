@@ -58,7 +58,7 @@ export function AboutHero() {
         {/* UnicornStudio Background - Full Width */}
         <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
           <UnicornScene
-            projectId="C5nR2Fk5eMNHZzdRma3P"
+            projectId="SW9bXdVZXWKe61pYtsZf"
             width="100%"
             height="100%"
             fps={30}
